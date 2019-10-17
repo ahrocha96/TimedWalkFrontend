@@ -1,0 +1,40 @@
+
+
+  <div class="container">
+    <h1>Timed 10 Minute Walk Test</h1>
+    <br>
+    <li class="list-inline-item"><a routerLink="/addpatient" class="btn btn-info">Test New Patient</a></li>
+    <router-outlet></router-outlet>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-sm-2">
+      </div>
+      <div class="col-sm-8">
+            <table class="table table-bordered table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <td>{{"Patient ID"}}</td>
+                  <td>{{"First Name"}}</td>
+                  <td>{{"Last Name"}}</td>
+                  <td>{{""}}</td>
+                  <td>{{""}}</td>
+                  <td>{{""}}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let p of patientList">
+                  <td>{{ p.patientID }}</td>
+                  <td>{{ p.firstName }}</td>
+                  <td>{{ p.lastName }}</td>
+                  <td><button type="button" name="button" class="btn btn-info" (click)="deletePatientByID(p.patientID)">Delete</button></td>
+                  <td><button type="button" name="button" class="btn btn-info"(click)="findPatient(p.patientID)">View</button></td>
+                  <td><button type="button" name="button" class="btn btn-info"(click)="updatePatient(p)">Edit</button></td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+      <div class="col-sm-2">
+      </div>
+    </div>
+  </div>
